@@ -9,29 +9,9 @@ apt update && apt upgrade -y
 apt install htop vnstat ufw neovim curl python3-certbot-dns-cloudflare python3-certbot-nginx python3-certbot-dns-linode ssl-cert-check -y
 
 # custom bashrc
-echo  -e "PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
-umask 022
-
-export LS_OPTIONS='--color=auto'
-eval '$(dircolors)'
-alias ls='ls $LS_OPTIONS'
-alias ll='ls $LS_OPTIONS -l'
-alias l='ls $LS_OPTIONS -lA'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-set -o vi
-
-alias s='systemctl'
-alias j='journalctl -xe'
-
-[[ -f /opt/vultr/vultr_app.sh ]] && . /opt/vultr/vultr_app.sh
-" > /root/.bashrc
+curl -L https://raw.githubusercontent.com/CheesyChocolate/servers/main/vps-startUp/bashrc -o ~/.bashrc
 
 # custom sshd_config to prevent brute force attacks
-# TODO
-
 curl -L https://raw.githubusercontent.com/CheesyChocolate/servers/main/vps-startUp/sshd_config -o /etc/ssh/sshd_config
 systemctl restart sshd
 
