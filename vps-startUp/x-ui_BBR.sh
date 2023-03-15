@@ -6,7 +6,7 @@
 apt update && apt upgrade -y
 
 # install some tools
-apt install htop vnstat ufw neovim curl python3-certbot-dns-cloudflare python3-certbot-nginx python3-certbot-dns-linode ssl-cert-check -y
+apt install htop vnstat ufw neovim curl python3-certbot-dns-cloudflare ssl-cert-check -y
 
 # custom bashrc
 curl -L https://raw.githubusercontent.com/CheesyChocolate/servers/main/vps-startUp/bashrc -o ~/.bashrc
@@ -35,14 +35,14 @@ ufw allow 20202:30302/udp
 # install x-ui
 bash <(curl -Ls https://raw.githubusercontent.com/NidukaAkalanka/x-ui-english/master/install.sh)
 
-# install BBR
-wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
-
-# install certbot
-systemctl stop nginx
-echo "enter server domain or subdomain name"
-read -r SERVER_DOMAIN_NAME
-echo "enter email address"
-read -r DEV_EMAIL_ADDRESS
-certbot certonly --standalone --preferred-challenges http --agree-tos --email "$DEV_EMAIL_ADDRESS" -d "$SERVER_DOMAIN_NAME"
-systemctl start nginx
+## install BBR
+#wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
+#
+## install certbot
+#systemctl stop nginx
+#echo "enter server domain or subdomain name"
+#read -r SERVER_DOMAIN_NAME
+#echo "enter email address"
+#read -r DEV_EMAIL_ADDRESS
+#certbot certonly --standalone --preferred-challenges http --agree-tos --email "$DEV_EMAIL_ADDRESS" -d "$SERVER_DOMAIN_NAME"
+#systemctl start nginx
