@@ -63,4 +63,3 @@ read -r SERVER_DOMAIN_NAME
 echo "enter email address"
 read -r DEV_EMAIL_ADDRESS
 certbot certonly --standalone --preferred-challenges http --agree-tos --email "$DEV_EMAIL_ADDRESS" -d "$SERVER_DOMAIN_NAME"
-systemctl start nginx
