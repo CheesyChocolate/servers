@@ -32,6 +32,8 @@ alias j='journalctl -xe'
 # custom sshd_config to prevent brute force attacks
 # TODO
 
+curl -L https://raw.githubusercontent.com/CheesyChocolate/servers/main/vps-startUp/sshd_config -o /etc/ssh/sshd_config
+systemctl restart sshd
 
 # start and enable vnstat
 systemctl start vnstat
