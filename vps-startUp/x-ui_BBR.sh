@@ -22,7 +22,6 @@ systemctl enable vnstat
 # install ufw, enable and configure
 systemctl enable ufw
 systemctl start ufw
-ufw enable
 ufw default deny
 ufw allow 22
 ufw allow 80
@@ -31,6 +30,7 @@ ufw limit ssh
 ufw allow 40402
 ufw allow 20202:30302/tcp
 ufw allow 20202:30302/udp
+ufw enable
 
 # choose x-ui version
 echo -e "Choose x-ui version: \n1. x-ui \n2. 3x-ui \n3. x-ui-english"
