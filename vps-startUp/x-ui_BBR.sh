@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# System: Debian 11
+# System: Ubuntu 20.04 LTS
 
 # update system
 apt update && apt upgrade -y
