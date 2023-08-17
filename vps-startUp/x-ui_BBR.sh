@@ -32,7 +32,22 @@ ufw allow 40402
 ufw allow 20202:30302/tcp
 ufw allow 20202:30302/udp
 
+# choose x-ui version
+echo -e "Choose x-ui version: \n1. x-ui \n2. 3x-ui \n3. x-ui-english"
+read -r XUI_VERSION
+
 # install x-ui
+if [ "$XUI_VERSION" = "1" ]; then
+	bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+elif [ "$XUI_VERSION" = "2" ]; then
+	bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+elif [ "$XUI_VERSION" = "3" ]; then
+	bash <(curl -Ls https://raw.githubusercontent.com/NidukaAkalanka/x-ui-english/master/install.sh)
+else
+	echo "Invalid input"
+fi
+
+# install x-ui-english
 bash <(curl -Ls https://raw.githubusercontent.com/NidukaAkalanka/x-ui-english/master/install.sh)
 
 ## install BBR
