@@ -6,7 +6,7 @@
 apt update && apt upgrade -y
 
 # install some tools
-apt install htop vnstat ufw neovim curl python3-certbot-dns-cloudflare ssl-cert-check -y
+apt install htop tmux vnstat ufw neovim curl python3-certbot-dns-cloudflare ssl-cert-check -y
 
 # custom bashrc
 curl -L https://raw.githubusercontent.com/CheesyChocolate/servers/main/vps-startUp/bashrc -o ~/.bashrc
