@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# System: Ubuntu 20.04 LTS
+# System: Ubuntu 22.04 LTS
 
 # update system
 apt update && apt upgrade -y
@@ -47,30 +47,3 @@ ufw allow 40402
 ufw allow 20202:30302/tcp
 ufw allow 20202:30302/udp
 ufw enable
-
-# choose x-ui version
-echo -e "Choose x-ui version: \n1. x-ui \n2. 3x-ui \n3. x-ui-english"
-read -r XUI_VERSION
-
-# install x-ui
-if [ "$XUI_VERSION" = "1" ]; then
-	bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-elif [ "$XUI_VERSION" = "2" ]; then
-	bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
-elif [ "$XUI_VERSION" = "3" ]; then
-	bash <(curl -Ls https://raw.githubusercontent.com/NidukaAkalanka/x-ui-english/master/install.sh)
-else
-	echo "Invalid input"
-fi
-
-## install BBR
-#wget -N --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && bash bbr.sh
-#
-## install certbot
-#systemctl stop nginx
-#echo "enter server domain or subdomain name"
-#read -r SERVER_DOMAIN_NAME
-#echo "enter email address"
-#read -r DEV_EMAIL_ADDRESS
-#certbot certonly --standalone --preferred-challenges http --agree-tos --email "$DEV_EMAIL_ADDRESS" -d "$SERVER_DOMAIN_NAME"
-#systemctl start nginx
