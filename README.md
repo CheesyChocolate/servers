@@ -1,3 +1,3 @@
 # servers
 
-server scripts and etc
+server scripts and etc.
